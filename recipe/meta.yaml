@@ -1,6 +1,5 @@
 {% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-bayesforecast
@@ -13,8 +12,7 @@ source:
   sha256: 316add09efdb2d9fd1c8e99c59b3affb119d21251a18242f3d2b8e4a1736df72
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   skip: true  # [r_base == "3.6"]
   rpaths:
     - lib/R/lib/
@@ -23,7 +21,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -32,7 +32,7 @@ requirements:
     - {{ posix }}autoconf
     - {{ posix }}automake          # [not win]
     - {{ posix }}automake-wrapper  # [win]
-    - {{ posix }}pkg-config
+    - pkg-config
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
@@ -59,7 +59,6 @@ requirements:
     - r-zoo
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     #- r-bh >=1.66.0
     - r-mass
     - r-rcpp >=0.12.0
