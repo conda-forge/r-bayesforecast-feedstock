@@ -9,7 +9,7 @@ About r-bayesforecast
 
 Home: https://CRAN.R-project.org/package=bayesforecast
 
-Package license: GPL-2.0-or-later
+Package license: GPL-2.0-only
 
 Summary: Fit Bayesian time series models using 'Stan' for full Bayesian inference. A wide range of distributions and models are supported, allowing users to fit Seasonal ARIMA, ARIMAX, Dynamic Harmonic Regression, GARCH, t-student innovation GARCH models, asymmetric GARCH, Random Walks, stochastic volatility models for univariate time series.  Prior specifications are flexible and explicitly encourage users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with typical visualization methods, information criteria such as loglik, AIC, BIC WAIC, Bayes factor and leave-one-out cross-validation methods. References: Hyndman (2017) <doi:10.18637/jss.v027.i03>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>.
 
@@ -18,7 +18,7 @@ About r-bayesforecast
 
 Home: https://CRAN.R-project.org/package=bayesforecast
 
-Package license: GPL-2.0-or-later
+Package license: GPL-2.0-only
 
 Summary: Fit Bayesian time series models using 'Stan' for full Bayesian inference. A wide range of distributions and models are supported, allowing users to fit Seasonal ARIMA, ARIMAX, Dynamic Harmonic Regression, GARCH, t-student innovation GARCH models, asymmetric GARCH, Random Walks, stochastic volatility models for univariate time series.  Prior specifications are flexible and explicitly encourage users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with typical visualization methods, information criteria such as loglik, AIC, BIC WAIC, Bayes factor and leave-one-out cross-validation methods. References: Hyndman (2017) <doi:10.18637/jss.v027.i03>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>.
 
