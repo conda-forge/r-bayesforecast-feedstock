@@ -13,10 +13,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [r_base == "3.6"]
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -44,38 +47,37 @@ requirements:
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
     - r-rcppparallel >=5.0.1
-    - r-stanheaders
-    - r-astsa
+    - r-stanheaders >=2.18.0
     - r-bayesplot >=1.5.0
     - r-bridgesampling >=0.3_0
     - r-forecast
     - r-ggplot2
     - r-gridextra
-    - r-loo >=2.2.0
+    - r-loo >=2.1.0
     - r-lubridate
     - r-prophet
-    - r-rstan >=2.18.1
-    - r-rstantools >=2.0.0
+    - r-rstan >=2.32.0
+    - r-rstantools >=2.4.0
     - r-zoo
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
     #- r-bh >=1.66.0
     - r-mass
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
     - r-rcppparallel >=5.0.1
-    #- r-stanheaders
-    - r-astsa
+    #- r-stanheaders >=2.18.0
     - r-bayesplot >=1.5.0
     - r-bridgesampling >=0.3_0
     - r-forecast
     - r-ggplot2
     - r-gridextra
-    - r-loo >=2.2.0
+    - r-loo >=2.1.0
     - r-lubridate
     - r-prophet
-    - r-rstan >=2.18.1
-    - r-rstantools >=2.0.0
+    - r-rstan >=2.32.0
+    - r-rstantools >=2.4.0
     - r-zoo
 
 test:
@@ -85,7 +87,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=bayesforecast
-  license: GPL-2.0-or-later
+  license: GPL-2.0-only
   summary: "Fit Bayesian time series models using 'Stan' for full Bayesian inference. A wide range of distributions and models are supported, allowing users to fit Seasonal ARIMA, ARIMAX, Dynamic Harmonic Regression, GARCH, t-student innovation GARCH models, asymmetric GARCH, Random Walks, stochastic volatility models for
     univariate time series.  Prior specifications are flexible and explicitly encourage users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with typical visualization methods, information criteria such as loglik, AIC, BIC WAIC, Bayes factor and leave-one-out
     cross-validation methods. References: Hyndman (2017) <doi:10.18637/jss.v027.i03>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>."
