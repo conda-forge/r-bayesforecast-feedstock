@@ -61,7 +61,6 @@ requirements:
     - r-zoo
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     #- r-bh >=1.66.0
     - r-mass
     - r-rcpp >=0.12.0
